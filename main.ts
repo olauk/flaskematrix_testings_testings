@@ -1,0 +1,28 @@
+function Juletre () {
+    colorbit_51bit.drawColorBit(2, 4, colorbit.colors(BitColors.Orange))
+    colorbit_51bit.drawColorBit(0, 3, colorbit.colors(BitColors.Green))
+    colorbit_51bit.drawColorBit(1, 3, colorbit.colors(BitColors.Green))
+    colorbit_51bit.drawColorBit(2, 3, colorbit.colors(BitColors.Green))
+    colorbit_51bit.drawColorBit(3, 3, colorbit.colors(BitColors.Green))
+    colorbit_51bit.drawColorBit(4, 3, colorbit.colors(BitColors.Green))
+    colorbit_51bit.drawColorBit(1, 2, colorbit.colors(BitColors.Green))
+    colorbit_51bit.drawColorBit(2, 2, colorbit.colors(BitColors.Green))
+    colorbit_51bit.drawColorBit(3, 2, colorbit.colors(BitColors.Green))
+    colorbit_51bit.drawColorBit(2, 1, colorbit.colors(BitColors.Green))
+    colorbit_51bit.drawColorBit(2, 0, colorbit.colors(BitColors.Yellow))
+}
+let colorbit_51bit: colorbit.Strip = null
+colorbit_51bit = colorbit.initColorBit(DigitalPin.P0, BitColorMode.RGB)
+colorbit_51bit.setBrightness(255)
+basic.forever(function () {
+    colorbit_51bit.showScrollStringColor("God Jul", colorbit.colors(BitColors.Red))
+    Juletre()
+    basic.pause(2000)
+    colorbit_51bit.showScrollStringColor("Ho ho ho", colorbit.colors(BitColors.Blue))
+    Juletre()
+    basic.pause(2000)
+    colorbit_51bit.showScrollStringColor("Vitensenteret", colorbit.colors(BitColors.Green))
+    colorbit_51bit.clear()
+    Juletre()
+    basic.pause(2000)
+})
